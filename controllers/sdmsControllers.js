@@ -7,12 +7,13 @@ module.exports.schools = async (req, res)=>{
 
 module.exports.addTeacher = async (req, res)=>{
     let teacher = req.body;
+    console.log(teacher)
     let teachers = JSON.parse(fs.readFileSync('./data/teachers.json'));
-    const teacherExists = teachers.find(c => c.staffId === parseInt(teacher.staffId));
-    if(!teacherExists){
-        res.status(404).send({data: 'You are have already submited your information'});
-    } 
-    else{
+    // const teacherExists = teachers.find(c => c.staffId === parseInt(teacher.staffId));
+    // if(!teacherExists){
+    //     res.status(404).send({data: 'You are have already submited your information'});
+    // } 
+    // else{
         teachers.push(teacher);
         fs.writeFile('./data/teachers.json', JSON.stringify(teachers, null, 2), err=>{
             if(err){
@@ -21,7 +22,7 @@ module.exports.addTeacher = async (req, res)=>{
                 res.status(200).send({data: teacher});
             }
         });
-    }
+    // }
     
 }
 

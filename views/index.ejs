@@ -93,7 +93,6 @@
                         <div class="panel panel-default">
                             <div class="panel-heading"><h3 class="panel-title">TEACHER IDENTIFICATION</h3></div>
                             <div class="panel-body">
-                                <form action="#" class="form-horizontal">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="p-20">
@@ -120,7 +119,6 @@
                                     </div>
                                     
 
-                                </form>
 
                             </div> <!-- panel-body -->
                         </div> <!-- panel -->
@@ -208,7 +206,6 @@
                         <div class="panel panel-default">
                             <div class="panel-heading"><h3 class="panel-title">EDUCATION INFO</h3></div>
                             <div class="panel-body">
-                                <form action="#" class="form-horizontal">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="p-20">
@@ -260,9 +257,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <col-md-12><button class="btn btn-default btn-sm btn-rounded pull-right">Add</button></col-md-12>
+                                        <col-md-12><button class="btn btn-default btn-sm btn-rounded pull-right" onclick="addSubject()">Add</button></col-md-12>
                                     </div>
-                                </form>
 
                             </div> <!-- panel-body -->
                         </div> <!-- panel -->
@@ -273,63 +269,24 @@
                     <div class="col-lg-12">
                         <h5><u>Teaching subjects</u></h5>
                         <div class="table-responsive">
-                            <table class="table m-t-30">
+                            <table class="table table-responsive m-t-30" id="subjectsContentBody">
                                 <thead>
-                                    <tr><th>#</th>
+                                    <th>#</th>
                                     <th>Level</th>
                                     <th>Combination</th>
                                     <th>Grade</th>
                                     <th>Subject</th>
                                     <th>Action</th>
-                                </tr></thead>
+                                </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>LCD</td>
-                                        <td>Lorem ipsum dolor sit amet.</td>
-                                        <td>1</td>
-                                        <td>$380</td>
-                                        <td><a href="#">x</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Mobile</td>
-                                        <td>Lorem ipsum dolor sit amet.</td>
-                                        <td>5</td>
-                                        <td>$50</td>
-                                        <td><a href="#">x</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>LED</td>
-                                        <td>Lorem ipsum dolor sit amet.</td>
-                                        <td>2</td>
-                                        <td>$500</td>
-                                        <td><a href="#">x</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>LCD</td>
-                                        <td>Lorem ipsum dolor sit amet.</td>
-                                        <td>3</td>
-                                        <td>$300</td>
-                                        <td><a href="#">x</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>Mobile</td>
-                                        <td>Lorem ipsum dolor sit amet.</td>
-                                        <td>5</td>
-                                        <td>$80</td>
-                                        <td><a href="#">x</a></td>
-                                    </tr>
+                                    
                                 </tbody>
                             </table>
                         </div>
                         <br/>
                     </div>
                 </div>
-
+                <input id="subjectContainer"/>
                 <div class="row">
                     <div class="col-lg-12">
                         <button class="btn btn-success btn-rounded btn-sm pull-right" onclick="saveSdms()">Submit</button>
@@ -517,9 +474,52 @@
                 // levels
                 getHierarchy('levels','all')
             });
+        
+            function insertObject(arr, obj) {
+                // find the last index
+                let index = arr.length;
+
+                // appending object to end of array
+                arr.splice(index, 0, obj);
+                return arr;
+            }
         </script>
 
         <script>
+            function addSubject(){
+                var levels = $("#levels").val();
+                var combinations = $("#combinations").val();
+                var grades = $("#grades").val();
+                var courses = $("#courses").val();
+                if(levels =="" || combinations =="" || grades =="" || courses ==""){
+                    alert('please feel in the subject you are teaching!');
+                    return
+                }
+                let subjectContainer = $('#subjectContainer').val()
+                let subjectArray = [];
+                if(!subjectContainer ==""){
+                    subjectArray = JSON.parse(subjectContainer);
+                }
+                let subjectObject = {levels, combinations, grades, courses}
+                let teachingSubjects = insertObject(subjectArray, subjectObject)
+                $('#subjectContainer').val(JSON.stringify(teachingSubjects));
+                let subjectContent = "";
+                let n = 0;
+                let itemsContent = "";
+                $.each(teachingSubjects, function(key, item) {
+                    n++;
+                    subjectContent+= '<tr>';
+                    itemsContent += '<td>'+ n +'</td>';
+                    itemsContent += '<td>'+ item.levels +'</td>';
+                    itemsContent += '<td>'+ item.combinations +'</td>';
+                    itemsContent += '<td>'+ item.grades +'</td>';
+                    itemsContent += '<td>'+ item.courses +'</td>';
+                    itemsContent += '<td><button onclick="removeSubject('+item.courses+')">Remove</button></td>';
+                    itemsContent += '</tr>';
+                })
+                $('#subjectsContentBody tr:last').after(itemsContent);
+                console.log('json_str')
+            }
             $("select").on("change", function() {
                 var selectId = $(this).attr("id");
                 parentCode = $('#'+selectId).val();
@@ -547,8 +547,15 @@
                 var mobilePhoneNumber = $("#mobilePhoneNumber").val();
                 var employmentStartDateTime = $("#employmentStartDateTime").val();
                 var companyEmail = $("#companyEmail").val();
-                var data = [{"staffId":staffId,"officialDocumentId":officialDocumentId,"names":names,"position": "Class Teacher","schooCode":schooCode,"gender":gender,"mobilePhoneNumber":mobilePhoneNumber,"employmentStatus": "ACTIVE","employmentStartDateTime":employmentStartDateTime,"companyEmail":companyEmail,"currentAcademicYear": "2022/2023"}];
-
+                var subjectsContentBody = $("#subjectContainer").val();
+                subjectsContentBody = JSON.parse(subjectsContentBody);
+                
+                if(staffId =="" || staffId =="" || staffId =="" || staffId =="" || staffId =="" || staffId =="" || staffId =="" || staffId =="" || staffId =="" || staffId =="" || subjectsContentBody == ""){
+                    alert('please feel in all information!');
+                    return
+                }
+                var data = [{"staffId":staffId,"officialDocumentId":officialDocumentId,"names":names,"position": "Class Teacher","schooCode":schooCode,"gender":gender,"mobilePhoneNumber":mobilePhoneNumber,"employmentStatus": "ACTIVE","employmentStartDateTime":employmentStartDateTime,"companyEmail":companyEmail,"currentAcademicYear": "2022/2023", "subjects": subjectsContentBody}];
+                console.log(data)
                 fetch('/addTeacher', {
                 method: 'POST',
                 headers: {
