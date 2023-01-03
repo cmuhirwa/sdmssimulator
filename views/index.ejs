@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from moltran.coderthemes.com/menu_2/form-advanced.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 23 Mar 2018 17:49:45 GMT -->
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+        <meta name="author" content="Coderthemes">
+
+        <link rel="shortcut icon" href="assets/images/favicon_1.ico">
+
+        <title>SDMS / TMIS</title>
+
+        <!-- Plugins css-->
+        <link href="assets/plugins/tagsinput/jquery.tagsinput.css" rel="stylesheet">
+        <link href="assets/plugins/toggles/toggles.css" rel="stylesheet">
+        <link href="assets/plugins/timepicker/bootstrap-timepicker.min.css" rel="stylesheet">
+        <link href="assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet">
+        <link href="assets/plugins/colorpicker/colorpicker.css" rel="stylesheet" type="text/css">
+        <link href="assets/plugins/jquery-multi-select/multi-select.css" rel="stylesheet" type="text/css">
+        <link href="assets/plugins/select2/dist/css/select2.css" rel="stylesheet" type="text/css">
+        <link href="assets/plugins/select2/dist/css/select2-bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="assets/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
+
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/core.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/components.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/pages.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/menu.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/responsive.css" rel="stylesheet" type="text/css">
+
+        <script src="assets/js/modernizr.min.js"></script>
+
+
+    </head>
+
+
+    <body>
+
+        <!-- Navigation Bar-->
+        <header id="topnav">
+            <div class="topbar-main">
+                <div class="container">
+
+                    <!-- LOGO -->
+                    <div class="topbar-left">
+                    </div>
+                    <!-- End Logo container-->
+
+
+                    <div class="menu-extras">
+
+                        <ul class="nav navbar-nav navbar-right pull-right">
+                            <li>
+                                <form role="search" class="navbar-left app-search pull-left hidden-xs">
+                                     <input type="text" placeholder="Search..." class="form-control">
+                                     <a href="#"><i class="fa fa-search"></i></a>
+                                </form>
+                            </li>
+                        </ul>
+                        <div class="menu-item">
+                            <!-- Mobile menu toggle-->
+                            <a class="navbar-toggle">
+                                <div class="lines">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </a>
+                            <!-- End mobile menu toggle-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- End Navigation Bar-->
+
+
+        <div class="wrapper">
+            <div class="container">
+
+                <!-- Page-Title -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h4 class="page-title">SDMS / TMIS Simulation</h4>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading"><h3 class="panel-title">TEACHER IDENTIFICATION</h3></div>
+                            <div class="panel-body">
+                                <form action="#" class="form-horizontal">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="p-20">
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">TMIS staff code</label>
+                                                    <div class="col-sm-9">
+                                                        <input class="form-control" type="number" id="staffId">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="p-20">
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">School</label>
+                                                    <div class="col-sm-9">
+                                                        <select class="select2 form-control" id="schooCode" data-placeholder="Choose a Country...">
+                                                        <option value="#">Select your School</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+
+                                </form>
+
+                            </div> <!-- panel-body -->
+                        </div> <!-- panel -->
+                    </div> 
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading"><h3 class="panel-title">BIO</h3></div>
+                            <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="p-20">
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">NATIONAL ID</label>
+                                                    <div class="col-sm-9">
+                                                        <input class="form-control" type="number" id="officialDocumentId">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="p-20">
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">FULL NAME</label>
+                                                    <div class="col-sm-9">
+                                                        <input class="form-control" id="names">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="p-20">
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">STARTED DATE</label>
+                                                    <div class="col-sm-9">
+                                                        <input class="form-control" type="date" id="employmentStartDateTime">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="p-20">
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">GENDER</label>
+                                                    <div class="col-sm-9">
+                                                        <select class="form-control" id="gender">
+                                                            <option value="">gender</option>
+                                                            <option value="male">MALE</option>
+                                                            <option value="female">FEMALE</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="p-20">
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">PHONE NUMBER</label>
+                                                    <div class="col-sm-9">
+                                                        <input class="form-control" type="number" id="mobilePhoneNumber">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="p-20">
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">EMAIL</label>
+                                                    <div class="col-sm-9">
+                                                        <input class="form-control" type="email" id="companyEmail">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div>
+                            </div> <!-- panel-body -->
+                        </div> <!-- panel -->
+                   </div> 
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading"><h3 class="panel-title">EDUCATION INFO</h3></div>
+                            <div class="panel-body">
+                                <form action="#" class="form-horizontal">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="p-20">
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">LEVEL</label>
+                                                    <div class="col-sm-9">
+                                                        <select class="form-control" id="levels">
+                                                            <option value="">select a level</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="p-20">
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">COMBINATION</label>
+                                                    <div class="col-sm-9">
+                                                        <select class="form-control" id="combinations">
+                                                            <option value="">select a combination</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="p-20">
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">GRADE</label>
+                                                    <div class="col-sm-9">
+                                                        <select class="form-control" id="grades">
+                                                            <option value="">select a grade</option>
+                                                            <option value="male">MALE</option>
+                                                            <option value="female">FEMALE</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="p-20">
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">SUBJECT</label>
+                                                    <div class="col-sm-9">
+                                                        <select class="form-control" id="courses">
+                                                            <option value="">select a subject</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <col-md-12><button class="btn btn-default btn-sm btn-rounded pull-right">Add</button></col-md-12>
+                                    </div>
+                                </form>
+
+                            </div> <!-- panel-body -->
+                        </div> <!-- panel -->
+                   </div> 
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h5><u>Teaching subjects</u></h5>
+                        <div class="table-responsive">
+                            <table class="table m-t-30">
+                                <thead>
+                                    <tr><th>#</th>
+                                    <th>Level</th>
+                                    <th>Combination</th>
+                                    <th>Grade</th>
+                                    <th>Subject</th>
+                                    <th>Action</th>
+                                </tr></thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>LCD</td>
+                                        <td>Lorem ipsum dolor sit amet.</td>
+                                        <td>1</td>
+                                        <td>$380</td>
+                                        <td><a href="#">x</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Mobile</td>
+                                        <td>Lorem ipsum dolor sit amet.</td>
+                                        <td>5</td>
+                                        <td>$50</td>
+                                        <td><a href="#">x</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>LED</td>
+                                        <td>Lorem ipsum dolor sit amet.</td>
+                                        <td>2</td>
+                                        <td>$500</td>
+                                        <td><a href="#">x</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>LCD</td>
+                                        <td>Lorem ipsum dolor sit amet.</td>
+                                        <td>3</td>
+                                        <td>$300</td>
+                                        <td><a href="#">x</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>Mobile</td>
+                                        <td>Lorem ipsum dolor sit amet.</td>
+                                        <td>5</td>
+                                        <td>$80</td>
+                                        <td><a href="#">x</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br/>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <button class="btn btn-success btn-rounded btn-sm pull-right" onclick="saveSdms()">Submit</button>
+                        <br/><br/><br/>
+                    </div>
+                </div>
+                <!-- Footer -->
+                <footer class="footer text-right">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                2023 © SDMS / TMIS Simulation.
+                            </div>
+                            <div class="col-xs-6">
+                                <ul class="pull-right list-inline m-b-0">
+                                    <li>
+                                        <a href="#" onclick="alert('This page is created tempolary for sdms / tmis integration simulation')">About</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick="alert('If you are stuck call 0784848236')">Help</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick="alert('If you are stuck call 0784848236')">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End Footer -->
+
+            </div>
+            <!-- end container -->
+
+        </div>
+        <!-- end wrapper -->
+
+
+
+        <!-- jQuery  -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/detect.js"></script>
+        <script src="assets/js/fastclick.js"></script>
+        <script src="assets/js/jquery.blockUI.js"></script>
+        <script src="assets/js/waves.js"></script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="assets/js/jquery.nicescroll.js"></script>
+        <script src="assets/js/jquery.scrollTo.min.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/jquery.app.js"></script>
+
+        <script src="assets/plugins/select2/dist/js/select2.min.js" type="text/javascript"></script>
+
+        <script src="assets/plugins/tagsinput/jquery.tagsinput.min.js"></script>
+        <script src="assets/plugins/toggles/toggles.min.js"></script>
+        <script src="assets/plugins/timepicker/bootstrap-timepicker.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+        <script type="text/javascript" src="assets/plugins/colorpicker/bootstrap-colorpicker.js"></script>
+        <script type="text/javascript" src="assets/plugins/jquery-multi-select/jquery.multi-select.js"></script>
+        <script type="text/javascript" src="assets/plugins/jquery-multi-select/jquery.quicksearch.js"></script>
+        <script src="assets/plugins/bootstrap-inputmask/bootstrap-inputmask.min.js" type="text/javascript"></script>
+        <script src="assets/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js" type="text/javascript"></script>
+
+
+        <script>
+            jQuery(document).ready(function() {
+
+                // Tags Input
+                jQuery('#tags').tagsInput({width:'auto'});
+
+                // Form Toggles
+                jQuery('.toggle').toggles({on: true});
+
+                // Time Picker
+                jQuery('#timepicker').timepicker({defaultTIme: false});
+                jQuery('#timepicker2').timepicker({showMeridian: false});
+                jQuery('#timepicker3').timepicker({minuteStep: 15});
+
+                // Date Picker
+                jQuery('#datepicker').datepicker();
+                jQuery('#datepicker-inline').datepicker();
+                jQuery('#datepicker-multiple').datepicker({
+                    numberOfMonths: 3,
+                    showButtonPanel: true
+                });
+                //colorpicker start
+
+                $('.colorpicker-default').colorpicker({
+                    format: 'hex'
+                });
+                $('.colorpicker-rgba').colorpicker();
+
+
+                //multiselect start
+
+                $('#my_multi_select1').multiSelect();
+                $('#my_multi_select2').multiSelect({
+                    selectableOptgroup: true
+                });
+
+                $('#my_multi_select3').multiSelect({
+                    selectableHeader: "<input type='text' class='form-control search-input' autocomplete='off' placeholder='search...'>",
+                    selectionHeader: "<input type='text' class='form-control search-input' autocomplete='off' placeholder='search...'>",
+                    afterInit: function (ms) {
+                        var that = this,
+                            $selectableSearch = that.$selectableUl.prev(),
+                            $selectionSearch = that.$selectionUl.prev(),
+                            selectableSearchString = '#' + that.$container.attr('id') + ' .ms-elem-selectable:not(.ms-selected)',
+                            selectionSearchString = '#' + that.$container.attr('id') + ' .ms-elem-selection.ms-selected';
+
+                        that.qs1 = $selectableSearch.quicksearch(selectableSearchString)
+                            .on('keydown', function (e) {
+                                if (e.which === 40) {
+                                    that.$selectableUl.focus();
+                                    return false;
+                                }
+                            });
+
+                        that.qs2 = $selectionSearch.quicksearch(selectionSearchString)
+                            .on('keydown', function (e) {
+                                if (e.which == 40) {
+                                    that.$selectionUl.focus();
+                                    return false;
+                                }
+                            });
+                    },
+                    afterSelect: function () {
+                        this.qs1.cache();
+                        this.qs2.cache();
+                    },
+                    afterDeselect: function () {
+                        this.qs1.cache();
+                        this.qs2.cache();
+                    }
+                });
+
+
+
+                // Select2
+                jQuery(".select2").select2({
+                    width: '100%'
+                });
+
+                //Bootstrap-TouchSpin
+                $(".vertical-spin").TouchSpin({
+                    verticalbuttons: true,
+                    verticalupclass: 'ion-plus-round',
+                    verticaldownclass: 'ion-minus-round'
+                });
+                var vspinTrue = $(".vertical-spin").TouchSpin({
+                    verticalbuttons: true
+                });
+                if (vspinTrue) {
+                    $('.vertical-spin').prev('.bootstrap-touchspin-prefix').remove();
+                }
+
+                $("input[name='demo1']").TouchSpin({
+                    min: 0,
+                    max: 100,
+                    step: 0.1,
+                    decimals: 2,
+                    boostat: 5,
+                    maxboostedstep: 10,
+                    postfix: '%'
+                });
+                $("input[name='demo2']").TouchSpin({
+                    min: -1000000000,
+                    max: 1000000000,
+                    stepinterval: 50,
+                    maxboostedstep: 10000000,
+                    prefix: '$'
+                });
+                $("input[name='demo3']").TouchSpin();
+                $("input[name='demo3_21']").TouchSpin({
+                    initval: 40
+                });
+                $("input[name='demo3_22']").TouchSpin({
+                    initval: 40
+                });
+
+                $("input[name='demo0']").TouchSpin({});
+
+                // levels
+                getHierarchy('levels','all')
+            });
+        </script>
+
+        <script>
+            $("select").on("change", function() {
+                var selectId = $(this).attr("id");
+                parentCode = $('#'+selectId).val();
+                if(selectId === 'levels'){
+                    $("#combinations").empty().append('<option value="">Please select a combination</option>');
+                    $("#grades").empty().append('<option value="">select a grade</option>');
+                    $("#courses").empty().append('<option value="">select a subject</option>');
+                    getHierarchy("combinations", parentCode);
+                }
+                if(selectId === 'combinations'){
+                    $("#grades").empty().append('<option value="">Please select a grade</option>');
+                    $("#courses").empty().append('<option value="">select a subject</option>');
+                    getHierarchy("grades", parentCode);
+                }if(selectId === 'grades'){
+                    $("#courses").empty().append('<option value="">Please select a subject</option>');
+                    getHierarchy("courses", parentCode);
+                }
+            });
+            function saveSdms(){
+                var staffId = $("#staffId").val();
+                var officialDocumentId = $("#officialDocumentId").val();
+                var names = $("#names").val();
+                var schooCode = $("schooCode").val();
+                var gender = $("#gender").val();
+                var mobilePhoneNumber = $("#mobilePhoneNumber").val();
+                var employmentStartDateTime = $("#employmentStartDateTime").val();
+                var companyEmail = $("#companyEmail").val();
+                var data = [{"staffId":staffId,"officialDocumentId":officialDocumentId,"names":names,"position": "Class Teacher","schooCode":schooCode,"gender":gender,"mobilePhoneNumber":mobilePhoneNumber,"employmentStatus": "ACTIVE","employmentStartDateTime":employmentStartDateTime,"companyEmail":companyEmail,"currentAcademicYear": "2022/2023"}];
+
+                fetch('/addTeacher', {
+                method: 'POST',
+                headers: {
+                    'Content-type':'application/json'
+                },
+                body: JSON.stringify(data)
+                })
+                .then(response => response.json().then(data =>({status: response.status, body: data})))
+                .then((obj)=>{
+                if(obj.status===200){
+                    //location.reload();
+                    console.log(obj.body.data);
+                }else{alert(obj.body.data)}
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+            }
+
+            (function getSchools(){
+                fetch('./getSchools', {
+                    method: 'GET'
+                })
+                .then(response => response.json())
+                .then(data => {
+                    let schoolOptions = "";
+                    //data = data['data'];
+                    $.each(data, function(key, item) {
+                        schoolOptions += '<option value="'+item.school_code+'">'+item.school_name+'</option>';
+                    })
+
+                    //$('#itemsContainer').val(JSON.stringify(data));
+                    $('#schooCode').append(schoolOptions);
+                });
+            })()
+
+            function getHierarchy(parent, parentCode){
+                fetch('./getHierarchy', {
+                    method: 'POST',
+                    headers: {
+                        'Content-type':'application/json'
+                    },
+                    body: JSON.stringify({"parent":parent, "parentCode":parentCode})
+                })
+                .then(response => response.json())
+                .then(data => {
+                    let hierValue = '';
+                    let hierOptions = "";
+                    $.each(data, function(key, item) {
+                        if(parent === 'levels'){
+                            hierValue = item.level_code;
+                            hierHolder = item.level_name;
+                        }else if(parent === 'combinations'){
+                            hierValue = item.combination_code;
+                            hierHolder = item.combination_name;
+                        }else if(parent === 'grades'){
+                            hierValue = item.grade_code;
+                            hierHolder = item.grade_name;
+                        }else if(parent === 'courses'){
+                            hierValue = item.course_code;
+                            hierHolder = item.course_name;
+                        }
+                        hierOptions += '<option value="'+hierValue+'">'+hierHolder+'</option>';
+                    })
+                    $('#'+parent).append(hierOptions);
+                });
+            }
+        </script>
+    </body>
+</html>

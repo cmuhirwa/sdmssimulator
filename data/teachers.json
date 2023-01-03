@@ -1,0 +1,31 @@
+[
+  {
+    "staffId": "26041016035",
+    "officialDocumentId": "1198880050312034",
+    "names": "NDARIBITSE TITE",
+    "position": "Class Teacher",
+    "schooCode": "260410",
+    "gender": "MALE",
+    "mobilePhoneNumber": "+250783702295",
+    "employmentStatus": "ACTIVE",
+    "employmentStartDateTime": "2022-08-24",
+    "companyEmail": "titendaribitse@gmail.com",
+    "currentAcademicYear": "2022/2023",
+    "specialities": []
+  },
+  [
+    {
+      "staffId": "12341234123",
+      "officialDocumentId": "1199880050312031",
+      "names": "CLEMENT MUHIRWA",
+      "position": "Class Teacher",
+      "gender": "MALE",
+      "mobilePhoneNumber": "0788848236",
+      "employmentStatus": "ACTIVE",
+      "employmentStartDateTime": "2023-01-01",
+      "companyEmail": "muhirwaclement123@gmail.com",
+      "currentAcademicYear": "2022/2023",
+      "specialities": []
+    }
+  ]
+]
